@@ -20,6 +20,7 @@ jobs:
         uses: tj-actions/changed-files@v35
         with: 
           files: track_file_changes.md
+          since_last_remote_commit: true 
       - name: Run step if file changes detected in previous step
         if: steps.changed-files.outputs.any_changed == 'true'
         run: 
