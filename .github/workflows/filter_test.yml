@@ -24,4 +24,4 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: 
           echo "Changes have been detected in your targeted file"
-          echo "Confirming change in your targeted file: ${{steps.changed-files.outputs.all_changed_files}}"
+          echo ${{steps.changed-files.outputs.all_changed_files}}
