@@ -23,5 +23,6 @@ jobs:
       - name: Run step if file changes detected in previous step
         if: steps.changed-files.outputs.any_changed == 'true'
         run: 
+          echo ${{steps.changed-files.outputs.any_changed}}
           echo "Changes have been detected in your targeted file"
           echo ${{steps.changed-files.outputs.all_changed_files}}
