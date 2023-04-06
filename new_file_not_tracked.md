@@ -1,0 +1,1 @@
+Adding/changing this file should not trigger the "Run step if file changes detected in previous step" step in the workflow
