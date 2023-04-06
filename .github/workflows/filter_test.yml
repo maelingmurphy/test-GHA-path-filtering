@@ -21,9 +21,10 @@ jobs:
         with: 
           files: track_file_changes.md
           since_last_remote_commit: true 
+      - name: Report on file change status
+        run: |
+          echo "Relevant changes detected?: ${{steps.changed-files.outputs.any_changed}}"
       - name: Run step if file changes detected in previous step
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: 
-          echo ${{steps.changed-files.outputs.any_changed}}
-          echo "Changes have been detected in your targeted file"
-          echo ${{steps.changed-files.outputs.all_changed_files}}
+        run: | 
+          echo "Relevant file(s) that have changed: ${{steps.changed-files.outputs.all_changed_files}}"
